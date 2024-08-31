@@ -1,0 +1,10 @@
+.idea
+.github
+.git
+target/generated-sources
+target/maven-archiver
+target/maven-status
+target/classes
+*/build
+.gitignore
+.env

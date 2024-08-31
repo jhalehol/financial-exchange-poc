@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:10.5
+    restart: always
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5449:5432'
+    volumes:
+      - database:/var/lib/postgresql/data
+    networks:
+      - financial-network
+  api:
+    image: financial-api
+    ports:
+      - '9200:9200'
+    depends_on:
+      - db
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_HOST: db:5432
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      PRIVATE_KEY_PATH: /app/key
+      PUBLIC_KEY_PATH: /app/key_.pub
+      CONVERTER_KEY: ${CONVERTER_KEY}
+    networks:
+      - financial-network
+  ui:
+    image: financial-ui
+    ports:
+      - 8080:80
+    depends_on:
+      - api
+    networks:
+      - financial-network
+volumes:
+  database: {}
+
+networks:
+  financial-network : {}

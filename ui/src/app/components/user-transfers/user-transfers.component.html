@@ -1,0 +1,114 @@
+<div>
+  <div class="filters-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Select user account</mat-label>
+      <mat-select [formControl]="selectedAccount" (selectionChange)="loadAccountTransfers()">
+        <mat-option *ngFor="let account of accounts" [value]="account.accountRef">
+          {{account.accountRef}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="selectedAccount.hasError('required')">You must to select an account</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Transfers from date</mat-label>
+      <input matInput [matDatepicker]="startDate" placeholder="Start date" [formControl]="selectedStartDate" (dateChange)="loadAccountTransfers()" >
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+      <mat-error *ngIf="selectedStartDate.invalid">Invalid filter date</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Transfers until date</mat-label>
+      <input matInput [matDatepicker]="endDate" placeholder="End date" [formControl]="selectedEndDate" (dateChange)="loadAccountTransfers()">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+      <mat-error *ngIf="selectedStartDate.invalid">Invalid filter date</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <mat-select [formControl]="selectedTransferType" (selectionChange)="loadAccountTransfers()">
+        <mat-option *ngFor="let type of transferTypes" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="loadAllTransfers()">Load transfers</button>
+  </div>
+
+  <table mat-table [dataSource]="transfersFiltered" class="mat-elevation-z8">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">
+        <span>
+          {{element.transferDateObject | date: 'short' }}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Transfer Type</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.isCredit">
+          {{ 'Credit' }}
+        </span>
+        <span *ngIf="!element.isCredit">
+          {{ 'Debit' }}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="account">
+      <th mat-header-cell *matHeaderCellDef>Related Account</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="element.isCredit">
+          {{ 'To' }}
+        </span>
+        <span *ngIf="!element.isCredit">
+          {{ 'From' }}
+        </span>
+        <span>
+          {{element.relatedAccount}} - {{element.userRelatedAccount}}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">
+        <span [ngClass]="{'credit-transfer': element.isCredit}">
+          {{element.description}}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="fromAmount">
+      <th mat-header-cell *matHeaderCellDef> Currency Conversion </th>
+      <td mat-cell *matCellDef="let element">
+        <span [ngClass]="{'credit-transfer': element.isCredit}" *ngIf="element.finalAmount !== element.originalAmount">
+          {{element.originalAmountAbsolute}} - {{element.originalCurrency}}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="finalAmount">
+      <th mat-header-cell *matHeaderCellDef> Final Amount </th>
+      <td mat-cell *matCellDef="let element">
+        <span [ngClass]="{'credit-transfer': element.isCredit}">
+          {{element.finalAmountAbsolute}} - {{element.finalCurrency}}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="observations">
+      <th mat-header-cell *matHeaderCellDef> Observations </th>
+      <td mat-cell *matCellDef="let element">
+        <span>
+          {{element.observations}}
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [length]="totalElements"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 [showFirstLastButtons]="true"
+                 (page)="pageEvent = loadAccountTransfers($event)">
+  </mat-paginator>
+</div>
+

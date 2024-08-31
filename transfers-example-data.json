@@ -1,0 +1,235 @@
+[
+    {
+        "accountRefSource": "000000002",
+        "accountRefTarget": "000000004",
+        "amount": 11000,
+        "transferDate": 1625426288,
+        "description": "Payment services"
+    },
+    {
+        "accountRefSource": "000000006",
+        "accountRefTarget": "000000001",
+        "amount": 1000000,
+        "transferDate": 1625901288
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000002",
+        "amount": 100000,
+        "transferDate": 1626261035,
+        "currency": "COP",
+        "description": "Payment services"
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 2000000,
+        "transferDate": 1626442720,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000004",
+        "amount": 100000,
+        "transferDate": 1626446928,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 100,
+        "transferDate": 1625577604,
+        "description": "House Fixing"
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000004",
+        "amount": 1000,
+        "transferDate": 1625923204,
+        "currency": "JPY",
+        "description": "Travel payment"
+
+    },
+    {
+        "accountRefSource": "000000003",
+        "accountRefTarget": "000000001",
+        "amount": 1000000,
+        "transferDate": 1625562604,
+        "currency": "BRL",
+        "description": "Services for developing"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000002",
+        "amount": 150000,
+        "transferDate": 1625145604
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000003",
+        "amount": 5000000,
+        "transferDate": 1626182404,
+        "currency": "COP",
+        "description": "Donation from Jhon"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 9000,
+        "transferDate": 1626413720
+
+    },
+    {
+        "accountRefSource": "000000002",
+        "accountRefTarget": "000000001",
+        "amount": 10000,
+        "transferDate": 1626096004,
+        "currency": "EUR",
+        "description": "Services for traveling"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000004",
+        "amount": 100000,
+        "transferDate": 1626447058
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000002",
+        "amount": 10000,
+        "transferDate": 1626447176,
+        "currency": "EUR",
+        "description": "Gift from your brother"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000003",
+        "amount": 112,
+        "transferDate": 1626447112,
+        "currency": "EUR"
+
+    },
+    {
+        "accountRefSource": "000000003",
+        "accountRefTarget": "000000001",
+        "amount": 130,
+        "transferDate": 1626446954,
+        "description": "Company payment from payonner"
+    },
+    {
+        "accountRefSource": "000000004",
+        "accountRefTarget": "000000001",
+        "amount": 500,
+        "transferDate": 1626421720
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000002",
+        "amount": 200000,
+        "transferDate": 1626447191,
+        "currency": "COP",
+        "description": "Payment"
+
+    },
+    {
+        "accountRefSource": "000000002",
+        "accountRefTarget": "000000006",
+        "amount": 100000,
+        "transferDate": 1626009604,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000003",
+        "accountRefTarget": "000000004",
+        "amount": 600,
+        "transferDate": 1625664004
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000002",
+        "amount": 250,
+        "transferDate": 1626341720
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000004",
+        "amount": 130,
+        "transferDate": 1626355204
+
+    },
+    {
+        "accountRefSource": "000000002",
+        "accountRefTarget": "000000001",
+        "amount": 3000,
+        "transferDate": 1626447000
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 100000,
+        "transferDate": 1625750404,
+        "currency": "COP",
+        "description": "Others"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 100000,
+        "transferDate": 1626443430,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000003",
+        "accountRefTarget": "000000001",
+        "amount": 1000,
+        "transferDate": 1626441520
+
+    },
+    {
+        "accountRefSource": "000000003",
+        "accountRefTarget": "000000002",
+        "amount": 100000,
+        "transferDate": 1626441720,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000004",
+        "accountRefTarget": "000000005",
+        "amount": 100000,
+        "transferDate": 1626411720,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000006",
+        "accountRefTarget": "000000001",
+        "amount": 100000,
+        "transferDate": 1626265204,
+        "currency": "COP"
+
+    },
+    {
+        "accountRefSource": "000000001",
+        "accountRefTarget": "000000005",
+        "amount": 30000000,
+        "transferDate": 1626431720,
+        "currency": "COP",
+        "description": "Services for developing"
+
+    }
+]

@@ -1,0 +1,18 @@
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+.filters-form {
+  width: 100%;
+  text-align: left;
+}
+
+.filter-control {
+  margin-left: 10px;
+}
+
+.credit-transfer {
+  color: red;
+}

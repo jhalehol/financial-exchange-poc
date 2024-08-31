@@ -1,0 +1,5 @@
+<mat-toolbar *ngIf="isAuthenticated$ | async">
+  <span>{{userName}} Transfers</span>
+  <span class="fill-space"></span>
+  <button mat-button routerLink="/login" (click)="logoutUser()">Logout</button>
+</mat-toolbar>
